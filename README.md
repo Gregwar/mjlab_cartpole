@@ -4,7 +4,7 @@
 <img src="imgs/cartpoles.gif" width="400" />
 </p>
 
-This is an example of a simple CartPole environment using mjlab for training. This repository is both a pedagogical example using mjlab and an example of organization using mjlab as an external dependency.
+This is an example of a simple CartPole environment using [mjlab](https://github.com/mujocolab/mjlab/) for training. This repository is both a pedagogical example using mjlab and an example of organization using mjlab as an external dependency.
 
 ## Installing
 
@@ -78,3 +78,7 @@ Where:
 ### Termination & truncation
 
 A termination is issued when $|\theta| > 30 \space deg$ and a timeout happens after 10s.
+
+## References
+
+* This is inspired by the [Creating a New Task](https://github.com/mujocolab/mjlab/blob/main/docs/create_new_task.md) markdown from mjlab
