@@ -4,7 +4,7 @@
 <img src="imgs/cartpoles.gif" width="400" />
 </p>
 
-This is an example of a simple CartPole environment using mjlab for training.
+This is an example of a simple CartPole environment using mjlab for training. This repository is both a pedagogical example using mjlab and an example of organization using mjlab as an external dependency.
 
 ## Installing
 
