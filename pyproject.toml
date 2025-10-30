@@ -9,7 +9,7 @@ description = "Simple cartpole example"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "mjlab>=0.0.4",
+    "mjlab",
 ]
 
 [project.scripts]
@@ -24,3 +24,6 @@ exclude = [
   "src/mjlab/third_party",
   "typings",
 ]
+
+[tool.uv.sources]
+mjlab = { git = "https://github.com/mujocolab/mjlab.git" }
