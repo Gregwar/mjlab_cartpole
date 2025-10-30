@@ -73,7 +73,7 @@ Where:
 * $\theta$ is the pole angle (0 is upright)
 * $x$ is the cart position
 * $\sigma = 0.3$ is a deviation to the center
-* ${\dot x^d}^2$ is the cart target velocity (command)
+* $\dot x^d$ is the cart target velocity (command)
 
 ### Termination & truncation
 
