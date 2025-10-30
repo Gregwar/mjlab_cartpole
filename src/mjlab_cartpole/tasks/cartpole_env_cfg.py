@@ -177,3 +177,4 @@ class CartPoleEnvCfg_PLAY(CartPoleEnvCfg):
 @dataclass
 class CartPoleRlCfg(RslRlOnPolicyRunnerCfg):
   max_iterations: int = 1_000
+  wandb_project: str = "mjlab_cartpole"
