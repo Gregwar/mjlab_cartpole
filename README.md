@@ -24,7 +24,7 @@ uv run mjlab_train Mjlab-Cartpole
 ```
 
 > [!NOTE]
-> Here, `mjlab_train` is a script present in this repository calling mjlab train command after importing relevant packages
+> `mjlab_train` and `mjlab_play` are commands declared in this repository. They simply import custom gym packages before calling `mjlab`'s original `train` and `enjoy`
 
 ## Playing the environment
 
