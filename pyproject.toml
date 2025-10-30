@@ -8,6 +8,9 @@ version = "0.1.0"
 description = "Simple cartpole example"
 readme = "README.md"
 requires-python = ">=3.12"
+dependencies = [
+    "mjlab>=0.0.4",
+]
 
 [project.scripts]
 # Import relevant gym packages before running mjlab train and play
