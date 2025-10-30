@@ -60,6 +60,10 @@ Here, mjlab is used as an external dependency.
 
 Actions are target velocity for the cart, controlled with $kv = 20$ gain (applied newtons are 20 times cart velocity error).
 
+## Observation
+
+Agent observation is the pole angle and velocity and the cart position and velocity.
+
 ### Reward
 
 The goal is for the pole not to fall, while navigating the cart to the center, the reward is as follows:
