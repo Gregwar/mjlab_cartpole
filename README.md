@@ -20,18 +20,15 @@ uv pip install -e .
 To run the training, use:
 
 ```
-uv run mjlab_train Mjlab-Cartpole
+uv run train Mjlab-Cartpole
 ```
-
-> [!NOTE]
-> `mjlab_train` and `mjlab_play` are commands declared in this repository. They simply import custom gym packages before calling `mjlab`'s original `train` and `enjoy`
 
 ## Playing the environment
 
 Run:
 
 ```
-uv run mjlab_play Mjlab-Cartpole-Play --checkpoint-file [path-to-checkpoint]
+uv run play Mjlab-Cartpole-Play --checkpoint-file [path-to-checkpoint]
 ```
 
 The checkpoint will typically appear in `logs/rsl_rl/exp1/[date]/model_999.pt` 

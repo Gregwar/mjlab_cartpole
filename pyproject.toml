@@ -12,10 +12,8 @@ dependencies = [
     "mjlab",
 ]
 
-[project.scripts]
-# Import relevant gym packages before running mjlab train and play
-mjlab_train = "mjlab_cartpole.scripts.train:main"
-mjlab_play = "mjlab_cartpole.scripts.play:main"
+[project.entry-points."mjlab.tasks"]
+mjlab_cartpole = "mjlab_cartpole.tasks"
 
 [tool.ruff]
 src = ["src"]  # Helpful for recognizing first-party imports.
