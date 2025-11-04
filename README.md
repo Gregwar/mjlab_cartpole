@@ -47,7 +47,6 @@ The structure is as follow:
   * `tasks/`: Task definition
     * `__init__.py`: Environments are registered here
     * `cartpole_env_cfg.py`: Environment configurations (actions, rewards, termination, reset etc.)
-  * `scripts/`: Scripts calling mjlab train and play after loading custom packages
 
 Here, mjlab is used as an external dependency. 
 
