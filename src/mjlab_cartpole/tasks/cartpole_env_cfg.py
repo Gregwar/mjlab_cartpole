@@ -75,7 +75,7 @@ def compute_center_reward(env, std=0.3):
 
 
 def compute_effort_penalty(env):
-  return -(env.sim.data.ctrl[:, 0] ** 2)
+  return -((env.sim.data.ctrl[:, 0] / 20) ** 2)
 
 
 @dataclass
@@ -171,10 +171,10 @@ class CartPoleEnvCfg(ManagerBasedRlEnvCfg):
 @dataclass
 class CartPoleEnvCfg_PLAY(CartPoleEnvCfg):
   events: EventCfg = field(default_factory=EventCfg)
-#   episode_length_s: float = 1e9
+  episode_length_s: float = 1e9
 
 
 @dataclass
 class CartPoleRlCfg(RslRlOnPolicyRunnerCfg):
-  max_iterations: int = 1_000
+  max_iterations: int = 500
   wandb_project: str = "mjlab_cartpole"

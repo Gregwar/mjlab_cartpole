@@ -12,6 +12,6 @@
     </body>
   </worldbody>
   <actuator>
-    <velocity name="slide" joint="slide" ctrlrange="-20 20" kv="20"/>
+    <motor name="slide" joint="slide" ctrlrange="-200 200" />
   </actuator>
 </mujoco>
