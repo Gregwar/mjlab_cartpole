@@ -54,7 +54,7 @@ Here, mjlab is used as an external dependency.
 
 ### Action
 
-Actions is a force for the cart (Newton).
+Actions is the force $f$ applied to the cart (Newton).
 
 ## Observation
 
