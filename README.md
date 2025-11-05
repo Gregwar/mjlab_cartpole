@@ -8,11 +8,10 @@ This is an example of a simple CartPole environment using [mjlab](https://github
 
 ## Installing
 
-Simply run the following commands:
+Simply run:
 
 ```
 uv sync
-uv pip install -e .
 ```
 
 ## Running the training
