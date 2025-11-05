@@ -8,20 +8,14 @@ version = "0.1.0"
 description = "Simple cartpole example"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
-    "mjlab",
-]
+dependencies = ["mjlab"]
 
 [project.entry-points."mjlab.tasks"]
 mjlab_cartpole = "mjlab_cartpole.tasks"
 
 [tool.ruff]
-src = ["src"]  # Helpful for recognizing first-party imports.
+src = ["src"]
 indent-width = 2
-exclude = [
-  "src/mjlab/third_party",
-  "typings",
-]
 
 [tool.uv.sources]
 mjlab = { git = "https://github.com/mujocolab/mjlab.git" }
