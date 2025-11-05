@@ -31,7 +31,7 @@ Run:
 uv run play Mjlab-Cartpole-Play --checkpoint-file [path-to-checkpoint]
 ```
 
-The checkpoint will typically appear in `logs/rsl_rl/exp1/[date]/model_999.pt` 
+The checkpoint will typically appear in `logs/rsl_rl/exp1/[date]/model_499.pt` 
 
 > [!NOTE]
 > The `-Play` variation of the environment has infinite episodes, and no random pushes applied to the cart
@@ -54,7 +54,7 @@ Here, mjlab is used as an external dependency.
 
 ### Action
 
-Actions are target velocity for the cart, controlled with $kv = 20$ gain (applied newtons are 20 times cart velocity error).
+Actions is a force for the cart (Newton).
 
 ## Observation
 
@@ -65,7 +65,7 @@ Agent observation is the pole angle and velocity and the cart position and veloc
 The goal is for the pole not to fall, while navigating the cart to the center, the reward is as follows:
 
 $$
-r = 5 \times cos(\theta) + exp(-\frac{x^2}{\sigma^2}) - 10^{-2} {\dot x^d}^2
+r = 5 \times cos(\theta) + exp(-\frac{x^2}{\sigma^2}) - 10^{-2} ({\frac{f}{20}})^2
 $$
 
 Where:
@@ -73,7 +73,7 @@ Where:
 * $\theta$ is the pole angle (0 is upright)
 * $x$ is the cart position
 * $\sigma = 0.3$ is a deviation to the center
-* $\dot x^d$ is the cart target velocity (command)
+* $f$ is the applied cart force (command)
 
 ### Termination & truncation
 
