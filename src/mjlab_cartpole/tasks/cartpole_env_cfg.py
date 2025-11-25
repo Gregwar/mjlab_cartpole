@@ -19,16 +19,11 @@ from mjlab.sim import MujocoCfg, SimulationCfg
 from mjlab.viewer import ViewerConfig
 from mjlab_cartpole.robot.cartpole_constants import CARTPOLE_ROBOT_CFG
 from mjlab.rl import RslRlOnPolicyRunnerCfg
-from mjlab.third_party.isaaclab.isaaclab.utils.math import sample_uniform
+from mjlab.utils.lab_api.math import sample_uniform
 from mjlab.envs import mdp
-from mjlab.terrains import TerrainImporterCfg
-from mjlab.utils.retval import retval
 
 
 SCENE_CFG = SceneCfg(
-  terrain=TerrainImporterCfg(
-    terrain_type="plane",
-  ),
   num_envs=512,
   extent=1.0,
   entities={"robot": CARTPOLE_ROBOT_CFG},
@@ -51,12 +46,11 @@ SIM_CFG = SimulationCfg(
 )
 
 
-@retval
-def CARTPOLE_ENV_CFG() -> ManagerBasedRlEnvCfg:
+def cartpole_env_cfg(play: bool = False) -> ManagerBasedRlEnvCfg:
   actions: dict[str, ActionTermCfg] = {
     "joint_pos": mdp.JointEffortActionCfg(
       asset_name="robot",
-      actuator_names=("slide",),
+      actuator_names=(r".*",),
       scale=20.0,
     )
   }
@@ -140,13 +134,15 @@ def CARTPOLE_ENV_CFG() -> ManagerBasedRlEnvCfg:
         "ranges": (0.8, 1.2),
       },
     ),
-    "random_push": EventTermCfg(
+  }
+
+  if not play:
+    events["random_push"] = EventTermCfg(
       func=random_push_cart,
       mode="interval",
       interval_range_s=(1.0, 2.0),
       params={"force_range": (-20.0, 20.0)},
-    ),
-  }
+    )
 
   return ManagerBasedRlEnvCfg(
     scene=SCENE_CFG,
@@ -162,16 +158,6 @@ def CARTPOLE_ENV_CFG() -> ManagerBasedRlEnvCfg:
   )
 
 
-@retval
-def CARTPOLE_ENV_CFG_PLAY() -> ManagerBasedRlEnvCfg:
-  cfg = deepcopy(CARTPOLE_ENV_CFG)
-
-  # No random push while in play env
-  del cfg.events["random_push"]
-
-  return cfg
-
-
-CARTPOLE_RL_CFG = RslRlOnPolicyRunnerCfg(
+cartpole_rl_cfg = RslRlOnPolicyRunnerCfg(
   max_iterations=500, wandb_project="mjlab_cartpole"
 )

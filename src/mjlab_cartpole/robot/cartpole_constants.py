@@ -16,7 +16,7 @@ def get_spec() -> mujoco.MjSpec:
 CARTPOLE_ROBOT_CFG = EntityCfg(
   spec_fn=get_spec,
   articulation=EntityArticulationInfoCfg(
-    actuators=(XmlMotorActuatorCfg(joint_names_expr=("slide",)),)
+    actuators=(XmlMotorActuatorCfg(joint_names_expr=(r".*",)),)
   ),
 )
 

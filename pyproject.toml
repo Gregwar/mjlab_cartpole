@@ -18,4 +18,4 @@ src = ["src"]
 indent-width = 2
 
 [tool.uv.sources]
-mjlab = { git = "https://github.com/mujocolab/mjlab.git" }
+mjlab = { git = "https://github.com/mujocolab/mjlab.git", rev = "be706226f04d2e40d83879e153c8120a56aef80f" }
