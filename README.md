@@ -27,7 +27,7 @@ uv run train Mjlab-Cartpole
 Run:
 
 ```
-uv run play Mjlab-Cartpole-Play --checkpoint-file [path-to-checkpoint]
+uv run play Mjlab-Cartpole --checkpoint-file [path-to-checkpoint]
 ```
 
 The checkpoint will typically appear in `logs/rsl_rl/exp1/[date]/model_499.pt` 
