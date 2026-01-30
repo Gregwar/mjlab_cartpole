@@ -5,7 +5,7 @@ from copy import deepcopy
 import torch
 
 from mjlab.envs import ManagerBasedRlEnvCfg
-from mjlab.managers.manager_term_config import (
+from mjlab.managers import (
   ActionTermCfg,
   EventTermCfg,
   ObservationGroupCfg,
@@ -31,7 +31,7 @@ SCENE_CFG = SceneCfg(
 
 VIEWER_CONFIG = ViewerConfig(
   origin_type=ViewerConfig.OriginType.ASSET_BODY,
-  asset_name="robot",
+  entity_name="robot",
   body_name="pole",
   distance=3.0,
   elevation=10.0,
@@ -49,7 +49,7 @@ SIM_CFG = SimulationCfg(
 def cartpole_env_cfg(play: bool = False) -> ManagerBasedRlEnvCfg:
   actions: dict[str, ActionTermCfg] = {
     "joint_pos": mdp.JointEffortActionCfg(
-      asset_name="robot",
+      entity_name="robot",
       actuator_names=(r".*",),
       scale=20.0,
     )

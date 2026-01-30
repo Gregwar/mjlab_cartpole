@@ -7,7 +7,7 @@ name = "mjlab-cartpole"
 version = "0.1.0"
 description = "Simple cartpole example"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.12,<3.14"
 dependencies = ["mjlab"]
 
 [project.entry-points."mjlab.tasks"]
@@ -18,4 +18,4 @@ src = ["src"]
 indent-width = 2
 
 [tool.uv.sources]
-mjlab = { git = "https://github.com/mujocolab/mjlab.git", rev = "be706226f04d2e40d83879e153c8120a56aef80f" }
+mjlab = { git = "https://github.com/mujocolab/mjlab.git", rev = "31f86893667719915e80632cdc048a007215fb83" }
