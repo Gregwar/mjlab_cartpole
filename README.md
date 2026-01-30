@@ -32,9 +32,6 @@ uv run play Mjlab-Cartpole --checkpoint-file [path-to-checkpoint]
 
 The checkpoint will typically appear in `logs/rsl_rl/exp1/[date]/model_499.pt` 
 
-> [!NOTE]
-> The `-Play` variation of the environment has infinite episodes, and no random pushes applied to the cart
-
 ## Organization
 
 The structure is as follow:
